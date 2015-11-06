@@ -44,6 +44,13 @@ public class RobotMap {
 	public final static int motor_winchUD = 4,
 						motor_winchLR = 5;
 	
+	// DIO Section
+	
+	public final static int limit_TopSwitch = 7,
+						limit_BottomSwitch = 6,
+						limit_FrontSwitch = 9,
+						limit_BackSwitch = 8;
+	
 	// ANALOG TO RIO ------------------>
 	// Gyro
 	public final static int gyroIn = 0;

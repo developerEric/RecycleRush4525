@@ -11,7 +11,7 @@ public class XboxController {
 		private final int inputValue;
 		
 		Button(int inputValue) {
-			this.inputValue = inputValue;
+			this.inputValue = inputValue; 
 		}
 		public int get() {
 			return inputValue;
