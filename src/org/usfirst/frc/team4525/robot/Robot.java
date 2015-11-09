@@ -6,6 +6,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
+import org.usfirst.frc.team4525.robot.commands.DriveStriat;
 import org.usfirst.frc.team4525.robot.subsystems.Claw;
 import org.usfirst.frc.team4525.robot.subsystems.DriveTrain;
 //import org.usfirst.frc.team4525.robot.subsystems.ExampleSubsystem;
@@ -36,7 +37,7 @@ public class Robot extends IterativeRobot {
     public void robotInit() {
 		oi = new OI();
         // instantiate the command used for the autonomous period
-    //    autonomousCommand = new ExampleCommand();
+		// autonomousCommand = new ExampleCommand();
     }
 	
 	public void disabledPeriodic() {
@@ -45,7 +46,10 @@ public class Robot extends IterativeRobot {
 
     public void autonomousInit() {
         // schedule the autonomous command (example)
-        if (autonomousCommand != null) autonomousCommand.start();
+    	if(Settings.getAutonomous() == Settings.AutoMode.Autozone){
+    		autonomousCommand = new DriveStriat(22,0.4);
+    	}
+    	
     }
 
     /**

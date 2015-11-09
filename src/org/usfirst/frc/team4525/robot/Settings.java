@@ -13,22 +13,24 @@ public class Settings {
 	
 	public enum AutoMode {
 		Nothing, // Robot Does Nothing
-		Turn_Get_Bin,
-		Bin_Across_Field; 
+		Autozone,
+		Grab_Bin,
+		Bin_Nooble;
 	}
 	
 	public void init() {
 		// Autonomous Chooser
 		am = new SendableChooser();
 		am.addDefault("Do Nothing", AutoMode.Nothing);
-		am.addObject("Turn 90 Bin Stealer", AutoMode.Turn_Get_Bin);
-		am.addObject("Across Bin Stealer", AutoMode.Bin_Across_Field);
-		//
+		am.addObject("To Autozone", AutoMode.Autozone); // Out of the way
+		am.addObject("Bin Grab Field To Autozone", AutoMode.Grab_Bin); //Get the bin thing and go
+		am.addObject("Prepare Bin for Noodling", AutoMode.Bin_Nooble);
+		// 
 		SmartDashboard.putData("Autonomous Mode", am);
 	}
 	
 	public static AutoMode getAutonomous() {
 		return (AutoMode)am.getSelected();
-	}
+	}	
 	
 }

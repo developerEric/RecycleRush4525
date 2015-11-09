@@ -46,14 +46,13 @@ public class DriveStriat extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	if(encoder.getDistance() < finalDistance) {
+    	while (encoder.getDistance() < finalDistance) {
     		double offset = gyro.getAngle() * 0.15;
     		if (offset > 0.15) offset = 0.15;
     		if (offset < -0.15) offset = -0.15;
     		Robot.drive.arcadeDrive(power, offset);
-    	} else {
-    		Robot.drive.arcadeDrive(0, 0);
     	}
+    	Robot.drive.arcadeDrive(0, 0);
     }
 
     // Make this return true when this Command no longer needs to run execute()

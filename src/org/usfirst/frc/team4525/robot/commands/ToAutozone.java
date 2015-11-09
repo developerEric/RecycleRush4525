@@ -1,38 +1,23 @@
-
 package org.usfirst.frc.team4525.robot.commands;
-import edu.wpi.first.wpilibj.command.Command;
 
-import org.usfirst.frc.team4525.robot.OI;
-import org.usfirst.frc.team4525.robot.Robot;
-import org.usfirst.frc.team4525.robot.RobotMap;
+import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class XboxControllerDrive extends Command {
-	
-    public XboxControllerDrive() {
+public class ToAutozone extends Command {
+
+    public ToAutozone() {
         // Use requires() here to declare subsystem dependencies
-        requires(Robot.drive);
+        // eg. requires(chassis);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    
     }
 
     // Called repeatedly when this Command is scheduled to run
-    
     protected void execute() {
-    	double pow = OI.getDriveStickAxis(RobotMap.driveForwardBackward);
-    	double off = OI.getDriveStickAxis(RobotMap.driveLeftRight);
-    	// Sprint
-    	Robot.drive.setSprint(OI.getButtonPressed(RobotMap.sprintDriveButton));
-    	// Stop
-    	Robot.drive.setBrake(OI.getButtonPressed(RobotMap.stopDriveButton));
-    	// Drive
-    	Robot.drive.arcadeDrive(off, pow);
-    	
     }
 
     // Make this return true when this Command no longer needs to run execute()
